@@ -1,0 +1,19 @@
+$('.inp2').click(function(){
+    $.ajax({
+        method:'POST',
+        url:'../../php/sign.php',
+        data:{
+            username:$('#un').val(),
+            password:$('#pw').val()
+        },
+        success:function(data){
+            console.log(data)
+            if(data.code==1){
+                location.href="./login.html"
+            }else{
+                alert(data.msg)
+            }
+        },
+        dataType:'json'
+    })
+})

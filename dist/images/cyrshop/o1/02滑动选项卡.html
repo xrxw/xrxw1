@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,li{
+            list-style: none;
+        }
+        ul{
+            width: 1000px;
+            height: 60px;
+            border-bottom:3px solid skyblue;
+            margin:50px auto;
+            display: flex;
+            position: relative;
+        }
+        li{
+            flex: 1;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        span{
+            position: absolute;
+            left:0;
+            bottom:-3px;
+            width:100px;
+            height: 3px;
+            background-color: red;
+        }
+    </style>
+    <script src="./jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            /* 
+                滑动选项卡
+                    + 每一个li添加一个鼠标移入事件
+                        ==>每一次让span移动到一个固定位置
+                        ==>修改span的left值
+                        ==>当你在第0个li的时候,span的left = 0
+                        ==>当你在第1个li的时候,span的left = 100
+                        ==>当你在第2个li的时候,span的left = 200
+                        ==>当你在第i个li的时候,span的left = 100*i
+            */
+            $('ul li').mouseover(function(){
+                //拿到你移入的是第几个li
+                console.log($(this).index())
+
+                //让span的left值改变就可以了
+                //每次移入的时候,都让之前的动画停止,直接做最新的这个动画
+                $('span').stop().animate({
+                    left:100*$(this).index()
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <ul>
+        <li>选项1</li>
+        <li>选项1</li>
+        <li>选项1</li>
+        <li>选项1</li>
+        <li>选项1</li>
+        <li>选项1</li>
+        <li>选项1</li>
+        <li>选项1</li>
+        <li>选项1</li>
+        <li>选项1</li>
+        <span></span>
+    </ul>
+</body>
+</html>

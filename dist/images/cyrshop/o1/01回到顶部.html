@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 5000px;
+        }
+        p{
+            width: 60px;
+            height: 60px;
+            background-color: indigo;
+            color:white;
+            line-height: 30px;
+            text-align: center;
+            position: fixed;
+            right:30px;
+            bottom:30px;
+            display: none;
+            cursor: pointer;
+            font-size:24px;
+        }
+    </style>
+    <script src="./jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            /* 
+                回到顶部案例
+                    + 有一个按钮,固定在页面的右下角位置
+                    + 当浏览器向上卷曲的高度 >= 300的时候显示
+                    + 当浏览器向上卷曲的高度 < 300的时候隐藏
+                    + 这个按钮一点击,让浏览器滚动到顶部
+            
+            */
+
+            //1 通过浏览器卷曲的高度,决定按钮显示与否
+            $(window).scroll(()=>{
+                //通过浏览器卷曲的高度来决定
+                if($(window).scrollTop()>=300){
+                    //让回到顶部按钮显示
+                    $('p').fadeIn()
+                }else{
+                    //让回到顶部按钮隐藏
+                    $('p').fadeOut()
+                }
+            })
+
+            //2 这个按钮一点击,让浏览器滚动到顶部
+            $('.goTop').click(()=>{
+                //让页面回到顶部-->滚回去
+                    //让页面滚动回去,需要用到animate()函数
+                    //滚动的不是窗口,是页面
+                    //所以我们是在这里让页面的scrollTop变成0
+                    $('html').animate({
+                        scrollTop:0
+                    },1000)
+            })
+        })
+    </script>
+</head>
+<body>
+    <p class="goTop">回到顶部</p>
+</body>
+</html>

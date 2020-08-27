@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="time"></h1>
+    <SCript>
+        //1、编写一个函数，能够获得一个随机的 0 ～ 255 之间的数字/要求 num 的值在 1 ～ 255 之间（包含 1 和 255）
+        //  function getnum(){
+        //         var num=parseInt(Math.random()*256)//声明一个变量用来存储取整后的随机数
+        //         return num
+        //  }
+        //  console.log(getnum())
+
+
+            // function getnum(){
+            //     var num=Math.random()*256//能取到[0,256)之间的数值。
+            //     num=Math.floor(num)
+            //     return num
+            // }
+            // console.log(getnum())
+
+//
+            /* function fn(){
+                var num=Math.floor(Math.random()*256)
+                return num
+            }
+            console.log(fn()) */
+//
+            // function fn(){
+            //     var num=parseInt(Math.random()*256)
+            //     return num
+            // }
+            // console.log(fn())
+//
+            // function fn(){
+            //     var num = parseInt(Math.random()*256)
+            //     return num
+            // }
+            // console.log(fn())
+
+            
+        //2、编写一个函数，获得一个十六进制的随机颜色的字符串(例如：#20CD4F)
+        // var color="0123456789abcdefg";
+        // var str="";//用来存放随机产生的数值
+        //   function fn(str){
+        //       for(var i=0;i<6;i++){
+        //         var num=parseInt(Math.random()*color.length);//声明一个变量用来存储取整后的随机数
+        //         var b=color[num]//声明变量存储：索引对应的值
+        //         str +=b//将索引到的值赋给空字符串
+        //       }
+        //       return str
+        //   }
+        //   console.log("#"+fn(str))
+//       
+            // function fn(){
+            //     var str="#"//用于拼接颜色
+            //     for(var i=1;i<=6;i++){//拼6个16进制的随机数值
+            //     var num=Math.random()*16//随机拼6个数字
+            //     num=Math.floor(num)//将拼出来的数值向下取整
+            //     num=num.toString(16)//转化为16进制
+            //     str +=num.toUpperCase()
+            //  }
+            //  return str
+            // }
+            // console.log(fn())
+//
+        //     function fn(){
+        //     var str="#"
+        //     for( var i=1;i<=6;i++){
+        //     var num=parseInt(Math.random()*16)
+        //     num=num.toString(16)
+        //     str +=num.toUpperCase()
+        //     }
+        //     return str
+        // }
+        //     console.log(fn())
+
+//
+            // function fn(){
+            //     var str="#"
+            //     for(var i=1;i<=6;i++){
+            //         var num=parseInt(Math.random()*16).toString(16)
+            //         str +=num.toUpperCase()
+            //     }
+            //     return str
+            // }
+            // console.log(fn())
+//
+            /* function fn(){
+                var str="#"
+                for(var i=1;i<=6;i++){
+                    var num=parseInt(Math.random()*16).toString(16).toUpperCase()
+                    str +=num
+                }
+                return str
+            }
+            console.log(fn()) */
+
+        //3、编写函数，把当前时间格式化成 YYYY-MM-DD HH-mm-ss
+        //   function fn(){
+        //       var d=new Date();
+        //       d=d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()+"&nbsp;&nbsp;"+d.getHours()+"-"+d.getMinutes()+"-"+d.getSeconds();
+        //       return d
+        //   }
+        //   document.write(fn())
+          
+        //4、编写函数，要求传入两个时间节点，能返回两个时间节点之间相差 多少天多少小时多少分钟多少秒
+        getDiff();
+        function getDiff(){
+            var date=new Date();
+            var date1=new Date(2020,9,1);
+            //获取两个距离格林威治时间的时间差
+            date=date.getTime()
+            date1=date1.getTime();
+            //两个时间差相减，得出两个时间差的毫秒数
+            var diff=date1-date;
+            var day=diff/(1000*60*60*24)//一天的毫秒数（1000*60*60*24）
+            day=Math.floor(day)//向下整取。不足一天的小数部分变成小时
+            
+
+            diff=diff-day*1000*60*60*24//把天数剩下毫秒数来计算
+            var hour=diff/(1000*60*60);//一天的毫秒数：1000*60*60
+            hour=parseInt(hour)//向下整取。不足一天的小数部分变成分钟
+
+            diff=diff-1000*60*60*hour;// 把小时剩下的毫秒数来计算
+            var minute=diff/(60*1000)// 一分钟的毫秒数:60*1000
+            minute=Math.floor(minute) // 向下取整,不足一分钟的部分变成秒
+
+            diff=diff-60*1000*minute;// 把分钟剩下的毫秒来计算
+            var second=Math.floor(diff/1000);// 一秒的毫秒数:1000
+            var time=document.getElementById('time')//把倒计时显示在h1标签里面
+            time.innerHTML = "今天距离国庆节还有"+day+"天"+hour+"小时"+minute+"分钟"+second+"秒"
+        }
+            var timeid=setInterval(getDiff,1000)
+            
+
+        //5、在页面上出现一个倒计时，显示现在到某一时间点的倒计时（以汉字的形式出现倒计时）
+      
+
+    </SCript>
+</body>
+</html>

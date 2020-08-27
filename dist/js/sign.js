@@ -1,0 +1,1 @@
+"use strict";$(".inp2").click(function(){$.ajax({method:"POST",url:"../../php/sign.php",data:{username:$("#un").val(),password:$("#pw").val()},success:function(a){console.log(a),1==a.code?location.href="./login.html":alert(a.msg)},dataType:"json"})});

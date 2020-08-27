@@ -1,0 +1,133 @@
+body, html {
+  width: 100%;
+  height: 100%;
+  background: #f7f7f7;
+}
+body div, html div {
+  width: 860px;
+  height: 670px;
+  margin-top: 78px;
+  background: #ffffff;
+  margin: 97px auto 0;
+}
+
+#inner {
+  width: 860px;
+  height: 670px;
+  margin-top: 60px;
+  line-height: 60px;
+}
+#inner div {
+  width: 360px;
+  margin: 0 auto;
+}
+#inner div img {
+  width: 160px;
+  height: 44px;
+  margin-top: 60px;
+  margin-left: 100px;
+}
+#inner div h2 {
+  font-size: 22px;
+  color: black;
+  font-weight: 400;
+  line-height: 96px;
+  margin-bottom: 28px;
+  text-align: center;
+}
+#inner div input {
+  border: none;
+  width: 347px;
+  height: 46px;
+  border: 1px solid #dedfe0;
+  letter-spacing: 3px;
+  padding-left: 11px;
+  outline: none;
+}
+#inner div h3 {
+  font-size: 13px;
+  line-height: 40px;
+}
+#inner div div {
+  width: 360px;
+  height: 48px;
+  margin-top: 4px;
+  position: relative;
+}
+#inner div div div {
+  width: 355px;
+  height: 46px;
+  padding-left: 5px;
+  line-height: 46px;
+  font-size: 16px;
+  color: #000;
+  float: left;
+  border: 1px solid #dedfe0;
+}
+#inner div div div span {
+  line-height: 46px;
+  font-size: 16px;
+  position: absolute;
+  top: 0px;
+  left: 16px;
+}
+#inner div div div input {
+  width: 270px;
+  height: 46px;
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 50px;
+  outline: none;
+}
+#inner div div div .icon-right {
+  font-size: 16px;
+  line-height: 46px;
+  position: absolute;
+  top: 0;
+  left: 30;
+}
+#inner div .inp {
+  width: 16px;
+  height: 16px;
+  border: none;
+  border: 1px solid #dedfe0;
+  line-height: 60px;
+}
+#inner div h4 {
+  font-size: 12px;
+  color: black;
+  padding-left: 7px;
+  display: inline-block;
+  line-height: 60px;
+}
+#inner div a {
+  margin: 0 7px;
+}
+#inner div .inp2 {
+  width: 360px;
+  height: 48px;
+  background: blue;
+  text-align: center;
+  color: #fff;
+}
+
+section {
+  text-align: center;
+  margin-top: 119px;
+}
+section h5 {
+  font-size: 10px;
+  color: black;
+  line-height: 48px;
+}
+section p {
+  font-size: 12px;
+  color: #9d9d9d;
+  margin-bottom: 40px;
+}
+section p a {
+  color: #9d9d9d;
+}
+
+/*# sourceMappingURL=sign_in.css.map */

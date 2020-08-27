@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        div{
+            width:300px;
+            margin:100px auto;
+        }
+        li{
+            list-style: none;
+            text-align: center;
+        }
+        .tab li{
+            width:100px;
+            height:50px;
+            line-height: 50px;
+            background:pink;
+            float: left;
+        }
+        .tab li.active{
+            background:red;
+            color:white;
+        }
+        .content li{
+            height: 300px;
+            background: yellow;
+            font-size:60px;
+            display: none;
+            line-height: 300px;
+        }
+        .content li.active{
+            display: block;
+        }
+    </style>
+    <script src="./jquery-1.12.4.js"></script>
+    <script>
+        //入口函数
+        $(function(){
+            //需求分析:点击tab里面的li显示content里面对应的li
+            $('.tab>li').click(function(){
+                $(this)
+                .addClass('active')
+                .siblings()
+                .removeClass('active')
+                .parent()
+                .next()
+                .children()
+                .removeClass('active')
+                .eq($(this).index())
+                .addClass('active')
+            })
+            //链式变成,因为每次返回的都是jquery对象,就可以继续调用jquery对象的方法
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <ul class="tab">
+            <li class="active">苹果</li>
+            <li>香蕉</li>
+            <li>荔枝</li>
+        </ul>
+        <ul class="content">
+            <li class="active">苹果</li>
+            <li>香蕉</li>
+            <li>荔枝</li>
+        </ul>
+    </div>
+</body>
+   
+</html>
